@@ -1,94 +1,57 @@
 {
   "name": "alberto",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "serve -s build",
+    "build": "tsc",
     "build:prod": "APP_ENV=production react-env --env APP_ENV -- npm run build",
     "build:staging": "APP_ENV=staging react-env --env APP_ENV -- npm run build",
-    "eject": "react-scripts eject",
-    "test": "react-scripts test",
-    "prepare": "husky install",
-    "test:e2e": "npx playwright test --config=./e2e/playwright.config.ts",
-    "version": "git add -A",
-    "postversion": "git push --no-verify && git push --tags --no-verify"
+    "test": "jest",
+    "test:e2e": "npx playwright test --config=./e2e/playwright.config.ts"
   },
   "dependencies": {
     "@beam-australia/react-env": "^3.1.1",
-    "@chakra-ui/react": "^1.8.6",
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.8.1",
-    "@fontsource/roboto": "^4.5.8",
-    "@liftedinit/many-js": "^0.1.1",
-    "@liftedinit/ui": "github:liftedinit/lifted-ui",
-    "@web3auth/openlogin-adapter": "^2.1.3",
-    "@web3auth/web3auth": "^2.1.3",
-    "framer-motion": "^6.2.8",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.8",
+    "@liftedinit/many-js": "github:stanleyjones/many-js#next",
+    "@liftedinit/ui": "github:fmorency/lifted-ui#next",
+    "@web3auth/base": "^7.2.0",
+    "@web3auth/modal": "^7.2.0",
+    "@web3auth/no-modal": "^7.2.0",
+    "@web3auth/openlogin-adapter": "^7.2.0",
+    "framer-motion": "^10.16.16",
+    "install": "^0.13.0",
     "localforage": "^1.10.0",
-    "react": "^17.0.2",
-    "react-app-rewired": "^2.2.1",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.33.1",
-    "react-icons": "^4.3.1",
-    "react-query": "^4.0.0-alpha.20",
-    "react-router": "^6.2.0",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.5.4",
-    "web-vitals": "^1.1.2",
-    "zustand": "^3.7.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.2",
+    "react-icons": "^4.12.0",
+    "react-query": "^3.39.3",
+    "react-router": "^6.20.1",
+    "react-router-dom": "^6.20.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^3.5.0",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
-    "@playwright/test": "^1.24.2",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^27.4.1",
-    "@types/node": "^12.20.37",
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "browserstack-local": "^1.5.1",
-    "dotenv": "^16.0.1",
-    "eslint-config-react-app": "^7.0.0",
-    "husky": "^8.0.1",
-    "prettier": "^2.6.0",
-    "react-error-overlay": "^6.0.9",
-    "ts-jest": "^27.1.3"
-  },
-  "resolutions": {
-    "//": "See https://github.com/facebook/create-react-app/issues/11773",
-    "react-error-overlay": "6.0.9"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "rules": {
-      "testing-library/no-debugging-utils": [
-        "error",
-        {
-          "utilsToCheckFor": {
-            "debug": false,
-            "logRoles": true,
-            "logDOM": true
-          }
-        }
-      ]
-    }
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@playwright/test": "^1.40.1",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "browserstack-local": "^1.5.5",
+    "dotenv": "^16.3.1",
+    "husky": "^8.0.3",
+    "prettier": "^3.1.1",
+    "react-error-overlay": "^6.0.11",
+    "serve": "^14.2.1",
+    "ts-jest": "^29.1.1"
   },
   "proxy": "http://localhost:8000"
 }
